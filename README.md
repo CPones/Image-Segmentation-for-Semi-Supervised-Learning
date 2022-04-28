@@ -62,12 +62,49 @@
 |![](https://ai-studio-static-online.cdn.bcebos.com/40dd8e974a1d4981a9fc1444fa229a3d95efbf6cd16c4081a0009fc567c0605e)|![](https://ai-studio-static-online.cdn.bcebos.com/1f80bca410944e2c803959c7e75f32208da50e2a796a4331a0e4fd1db10b7f1f)|
 
 # 3. 项目运行
+数据集下载后存放于`data`文件夹下，整个项目的文件目录和功能介绍如下：
+```
+|--train.py       #模型训练
+|--predict.py     #模型预测
+|--Unet.py        #Unet模型
+|--PSPnet.py      #PSPnet模型
+|--Deeplab.py     #Deeplab模型
+|--dataset.py     #数据读取器
+|--data
+    |--train_image        #训练集、验证集，原始图像
+    |--train_50k_mask     #训练集、验证集，标注图像
+    |--val_image          #测试集，输入图像
+    |--val_label          #测试集，预测图像
+|--output
+    |--final.pdparams     #参数保存文件
+    |--final.pdopt        #参数保存文件
+```
 
 ## 3.1 模型训练
+可选择三种模型`UNet`、`PSPnet`和`Deeplabv3`进行训练，注意数据集的路径应保持一致。
+
+网络模型原理及结构请查看[model.md](model.md)
+```
+!python train.py --model='UNet'  \
+                 --eval_num=1000 \
+                 --batch_size=4  \
+```
 
 ## 3.2 模型预测
+可选择三种模型`UNet`、`PSPnet`和`Deeplabv3`进行预测，注意数据集的路径应保持一致。
+```
+!python predict.py --model='Unet' \
+                   --checkpoint_path='output/final'  \
+                   --eval_num=1000  \
+                   --batch_size=4  \
+```
+预测结果如下图：
+
+![](https://ai-studio-static-online.cdn.bcebos.com/91531674a8024bdca1a2f41552c518869096ed29d04a416d8d2ad2d2ef6f1713)
 
 ## 3.3 结果记录
+
+
 
 # 4. 总结提升
 
