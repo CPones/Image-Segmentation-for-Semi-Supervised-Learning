@@ -22,6 +22,44 @@
 - Deeplab：空洞卷积以增大特征图的感受野。
 
 # 2. 数据集
+## 2.1 数据集划分
+1. 训练数据集包括50,000幅像素级有标注的图像，共包含500个类，每个类100幅图像。[点击下载](https://aistudio.baidu.com/aistudio/datasetdetail/95703)；
+2. A榜测试数据集包括11,878幅无标注的图像。[点击下载](https://aistudio.baidu.com/aistudio/datasetdetail/95703)
+3. B榜测试数据集包括10,989幅无标注的图像。[点击下载](https://aistudio.baidu.com/aistudio/datasetdetail/100087)
+
+
+## 2.2 文件目录
+```
+|---|train_image #原始图像
+|---|---|n014443537 #文件夹，类别
+|---|---|---|n01443537_2.png #图像
+|---|---|---|……
+|---|---|n01491361
+|---|---|---|n01443537_176.png #图像
+|---|---|---|……
+……
+
+|---|train_50k_mask #标注图像
+|---|---|n014443537 #文件夹，类别
+|---|---|---|n01443537_2.png #图像
+|---|---|---|……
+|---|---|n01491361
+|---|---|---|n01443537_176.png #图像
+|---|---|---|……
+……
+
+|---|val_image #测试提交
+|---|---|ILSVRC2012_val_00000001.JPEG
+|---|---|ILSVRC2012_val_00000004.JPEG
+|---|---|……
+
+
+```
+## 2.3 图像可视化
+|原始图像|标注图像|
+|:-:|:-:|
+|![](https://ai-studio-static-online.cdn.bcebos.com/a74cf67e3ab741b99aed5ed7734c5d8f8d40219eab7b4cafa59e96e17f701714)|![](https://ai-studio-static-online.cdn.bcebos.com/af685ee04f5f4acbaaba5141ce2c558440729d14762c412a94f02bb70a2e1c1d)|
+|![](https://ai-studio-static-online.cdn.bcebos.com/40dd8e974a1d4981a9fc1444fa229a3d95efbf6cd16c4081a0009fc567c0605e)|![](https://ai-studio-static-online.cdn.bcebos.com/1f80bca410944e2c803959c7e75f32208da50e2a796a4331a0e4fd1db10b7f1f)|
 
 # 3. 项目运行
 
